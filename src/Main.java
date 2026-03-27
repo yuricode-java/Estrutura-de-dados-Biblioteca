@@ -1,6 +1,6 @@
 public class Main {
     // Main → só pra testar
-    public static void main() {
+    public static void main(String[] args) {
 
 
     }
