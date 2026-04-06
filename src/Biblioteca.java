@@ -1,16 +1,21 @@
-import java.util.LinkedList;
-
 public class Biblioteca {
-    // Biblioteca → onde você gerencia a lista (LinkedList)
-    // Testeg
     public static void main(String[] args) {
-        LinkedList<Livro> Livros = new LinkedList<>();
+        Livro livro1 = new Livro("Jojolion", "Hirohiko Araki", 2011);
+        Livro livro2 = new Livro("Estruturas de Dados", "Autor X", 2023);
 
-        Livros.add(new Livro("Abc","Alfabeto",2000));
+        Usuario u1 = new Usuario("Yuri");
+        Usuario u2 = new Usuario("Cacaio");
 
-        for(Livro l:Livros){
-            System.out.println(l);
-        }
+        u1.visualizarLivro(livro1);
+        u1.visualizarLivro(livro2);
+        u1.verHistorico();
+
+        System.out.println("---");
+
+        livro1.SolicitarLivro(u1);
+        livro1.SolicitarLivro(u2);
+
+        livro1.verFila();
+
     }
-
 }
