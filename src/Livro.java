@@ -42,7 +42,7 @@ public class Livro {
     }
 
     public void isDisponivel(Usuario usuario) {
-        if (Disponivel == true) {
+        if (this.Disponivel) {
             System.out.println("Disponivel");
         } else System.out.println("Ja foi emprestado");
     }
