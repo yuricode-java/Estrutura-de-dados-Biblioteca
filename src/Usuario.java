@@ -3,6 +3,11 @@ import java.util.Stack;
 public class Usuario {
     private String nome;
     private Livro livroEmprestado;
+
+    public Stack<Livro> getHistorico() {
+        return historico;
+    }
+
     private Stack<Livro> historico;
 
     public Usuario(String nome) {
@@ -24,6 +29,7 @@ public class Usuario {
         for (int i = historico.size() - 1; i >= 0; i--) {
             System.out.println("- " + historico.get(i).getTitulo());
         }
+
     }
 
     public String getNome() { return nome; }

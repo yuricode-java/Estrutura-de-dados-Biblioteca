@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Queue;
 
 public class Livro {
@@ -32,11 +33,11 @@ public class Livro {
         }
     }
 
-    public void DevolverLivro(Usuario usuario){
-        if(!filaDeEspera.isEmpty()){
+    public void DevolverLivro(Usuario usuario) {
+        if (!filaDeEspera.isEmpty()) {
             Usuario proximo = filaDeEspera.poll();
             proximo.setLivro(this);
-        }else {
+        } else {
             this.Disponivel = true;
         }
     }
@@ -47,12 +48,12 @@ public class Livro {
         } else System.out.println("Ja foi emprestado");
     }
 
-    public void verFila(){
-        if(!filaDeEspera.isEmpty()){
-            for(Usuario f:filaDeEspera){
+    public void verFila() {
+        if (!filaDeEspera.isEmpty()) {
+            for (Usuario f : filaDeEspera) {
                 System.out.println(f.getNome());
             }
-        }else System.out.println("esta vazia");
+        } else System.out.println("esta vazia");
     }
 
 
@@ -61,9 +62,27 @@ public class Livro {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Livro livro = (Livro) o;
+
+        return anoPublicado == livro.anoPublicado &&
+                Objects.equals(titulo, livro.titulo) &&
+                Objects.equals(autor, livro.autor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(titulo, autor, anoPublicado);
+    }
+
+    @Override
     public String toString() {
         return "Título: " + this.titulo + "\n" +
                 "Autor: " + this.autor + "\n" +
                 "Ano Publicado: " + this.anoPublicado + "\n";
     }
+
 }
