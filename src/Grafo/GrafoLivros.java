@@ -1,7 +1,11 @@
+package Grafo;
+
+import modelo.Livro;
+import modelo.Usuario;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Stack;
 
 public class GrafoLivros {
     private HashMap<Livro, Set<Livro>> livroRecomendacao;
@@ -11,7 +15,6 @@ public class GrafoLivros {
     }
 
 
-    // essa logica é pra criar a recomendação no livro A para outros livros 1 vez
     public void colocarLivro(Livro livro) {
         Set<Livro> livros = livroRecomendacao.get(livro);
         if (livros == null) {

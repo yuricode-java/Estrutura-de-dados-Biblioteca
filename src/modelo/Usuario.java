@@ -1,3 +1,5 @@
+package modelo;
+
 import java.util.Stack;
 
 public class Usuario {

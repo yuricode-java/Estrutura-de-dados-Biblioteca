@@ -1,9 +1,13 @@
+package modelo;
+
+import estrutura.no;
+
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
 
+
 public class Livro {
-    //Livro → representa os dados (título, autor, ano)
     String titulo;
     String autor;
     boolean Disponivel;
@@ -85,4 +89,11 @@ public class Livro {
                 "Ano Publicado: " + this.anoPublicado + "\n";
     }
 
+    public void imprimir(no nodeAtual) {
+        if (nodeAtual != null) {
+            imprimir(nodeAtual.esquerda);
+            System.out.println(nodeAtual.valor);
+            imprimir(nodeAtual.direita);
+        }
+    }
 }
