@@ -2,8 +2,8 @@ package estrutura;
 
 import modelo.Livro;
 
-class Arvore {
-    No raiz;
+public class Arvore {
+    public No raiz;
 
     public void inserir(Livro livro) {
         raiz = inserirRecursivo(raiz, livro);

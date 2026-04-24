@@ -1,10 +1,10 @@
 package algoritmos;
 
-import estrutura.no;
+import estrutura.No;
 import modelo.Livro;
 
-class DFS {
-    public static Livro percorrerArvore(no node, Livro livro) {
+public class DFS {
+    public static Livro percorrerArvore(No node, Livro livro) {
         if (node == null) {
             return null;
         }

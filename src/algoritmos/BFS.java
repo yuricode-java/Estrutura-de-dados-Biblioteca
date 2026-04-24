@@ -1,14 +1,14 @@
 package algoritmos;
 
-import estrutura.no;
+import estrutura.No;
 import modelo.Livro;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-class BFS {
-    public static Livro percorrerArvore(no node, Livro livro) {
-        Queue<no> raizFila = new LinkedList<>();
+public class BFS {
+    public static Livro percorrerArvore(No node, Livro livro) {
+        Queue<No> raizFila = new LinkedList<>();
 
         if (node == null) {
             return null;
@@ -17,7 +17,7 @@ class BFS {
         raizFila.add(node);
 
         while (!raizFila.isEmpty()) {
-            no atual = raizFila.poll();
+            No atual = raizFila.poll();
             if (atual.valor.equals(livro)) {
                 return atual.valor;
             }

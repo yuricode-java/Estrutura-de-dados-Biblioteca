@@ -1,7 +1,6 @@
 package modelo;
 
-import estrutura.no;
-
+import estrutura.No;
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
@@ -11,7 +10,7 @@ public class Livro {
     String titulo;
     String autor;
     boolean Disponivel;
-    int anoPublicado;
+    public int anoPublicado;
     Queue<Usuario> filaDeEspera;
 
 
@@ -69,7 +68,6 @@ public class Livro {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Livro livro = (Livro) o;
 
         return anoPublicado == livro.anoPublicado &&
@@ -89,7 +87,7 @@ public class Livro {
                 "Ano Publicado: " + this.anoPublicado + "\n";
     }
 
-    public void imprimir(no nodeAtual) {
+    public void imprimir(No nodeAtual) {
         if (nodeAtual != null) {
             imprimir(nodeAtual.esquerda);
             System.out.println(nodeAtual.valor);

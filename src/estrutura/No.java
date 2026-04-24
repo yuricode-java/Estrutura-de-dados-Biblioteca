@@ -2,10 +2,10 @@ package estrutura;
 
 import modelo.Livro;
 
-class No {
-    Livro valor;
-    No esquerda;
-    No direita;
+public class No {
+    public Livro valor;
+    public No esquerda;
+    public No direita;
 
     public No(Livro valor) {
         this.valor = valor;

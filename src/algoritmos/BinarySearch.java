@@ -1,10 +1,10 @@
 package algoritmos;
 
-import estrutura.no;
+import estrutura.No;
 import modelo.Livro;
 
 class BinarySearch {
-    public static void percorrerArvore(no node, Livro valor) {
+    public static void percorrerArvore(No node, Livro valor) {
         if (node == null) {
             return;
         }
